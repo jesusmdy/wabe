@@ -5,6 +5,7 @@ interface ElementStore {
     elements: Element[];
     setElements: (elements: Element[]) => void;
     addElement: (element: Element) => void;
+    updateElement: (element: Element) => void;
 }
 
 const elementsStore = create<ElementStore>(
@@ -13,6 +14,7 @@ const elementsStore = create<ElementStore>(
             elements: [] as Element[],
             setElements: (elements) => set({ elements }),
             addElement: (element) => set((state) => ({ elements: [...state.elements, element] })),
+            updateElement: (element) => set((state) => ({ elements: state.elements.map((e) => e.id === element.id ? element : e) })),
         }
     )
 );

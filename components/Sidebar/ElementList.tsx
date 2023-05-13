@@ -23,9 +23,9 @@ const ListElement: FC<{
         <div
             className={
                 classNames(
-                    'p-2 border-b border-zinc-800 cursor-pointer',
+                    'p-2 border-zinc-800 cursor-pointer',
                     {
-                        'bg-zinc-700': isSelected,
+                        'font-bold text-white bg-zinc-800': isSelected,
                     }
                 )
             }

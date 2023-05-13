@@ -17,19 +17,15 @@ const ElementOutputItem: FC<{
 
     const outputElement = useMemo(
         () => {
-
-            const className = classNames(
-                element.props.className,
-                {
-                    'outline outline-blue-500/50': isSelected,
-                },
-            );
-
+            console.log('outputElement', element);
             return {
                 ...element,
                 props: {
                     ...element.props,
-                    className,
+                    style: {
+                        ...element.props.style,
+                        outline: isSelected ? '1px dashed #00f' : 'none',
+                    },
                 },
             }
         },
